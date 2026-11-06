@@ -34,7 +34,7 @@ jobs:
       - name: Accept SDK licenses and install Android SDK 35
         shell: bash
         run: |
-          set -euo pipefail
+          set -eu
           sdkmanager_bin="$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | sort -V | tail -n 1)"
           test -x "$sdkmanager_bin"
           yes | "$sdkmanager_bin" --licenses
